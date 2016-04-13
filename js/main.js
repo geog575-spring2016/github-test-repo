@@ -336,6 +336,8 @@ function highlight(props){
 	setLabel(props);
 };
 
+//Making a change!
+
 //function to create dynamic label
 function setLabel(props){
 	//label content
