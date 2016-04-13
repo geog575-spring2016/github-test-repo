@@ -23,11 +23,16 @@ var chartWidth = window.innerWidth * 0.425,
 
 //create a scale to size bars proportionally to frame and for axis
 var yScale = d3.scale.linear()
-	.range([463, 0])
-	.domain([0, 110]);
+	.range([7999, 0])
+	.domain([0, 90]);
 
 //begin script when window loads
 window.onload = setMap();
+
+
+//hellooooo
+//help!
+//we should fix this code
 
 //set up choropleth map
 function setMap(){
