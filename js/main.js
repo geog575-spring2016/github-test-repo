@@ -23,11 +23,16 @@ var chartWidth = window.innerWidth * 0.425,
 
 //create a scale to size bars proportionally to frame and for axis
 var yScale = d3.scale.linear()
-	.range([463, 0])
-	.domain([0, 110]);
+	.range([7999, 0])
+	.domain([0, 90]);
 
 //begin script when window loads
 window.onload = setMap();
+
+
+//hellooooo
+//help!
+//we should fix this code
 
 //set up choropleth map
 function setMap(){
@@ -77,9 +82,6 @@ function setMap(){
 
 		//join csv data to GeoJSON enumeration units
 		franceRegions = joinData(franceRegions, csvData);
-
-		//create the color scale
-		var colorScale = makeColorScale(csvData);
 
 		//add enumeration units to the map
 		setEnumerationUnits(franceRegions, map, path, colorScale);
@@ -168,14 +170,6 @@ function setEnumerationUnits(franceRegions, map, path, colorScale){
 
 //function to create color scale generator
 function makeColorScale(data){
-	var colorClasses = [
-		"#D4B9DA",
-		"#C994C7",
-		"#DF65B0",
-		"#DD1C77",
-		"#980043"
-	];
-
 	//NATURAL BREAKS SCALE
 	//create color scale generator
 	var colorScale = d3.scale.threshold()
