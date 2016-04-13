@@ -83,9 +83,6 @@ function setMap(){
 		//join csv data to GeoJSON enumeration units
 		franceRegions = joinData(franceRegions, csvData);
 
-		//create the color scale
-		var colorScale = makeColorScale(csvData);
-
 		//add enumeration units to the map
 		setEnumerationUnits(franceRegions, map, path, colorScale);
 
@@ -173,14 +170,6 @@ function setEnumerationUnits(franceRegions, map, path, colorScale){
 
 //function to create color scale generator
 function makeColorScale(data){
-	var colorClasses = [
-		"#D4B9DA",
-		"#C994C7",
-		"#DF65B0",
-		"#DD1C77",
-		"#980043"
-	];
-
 	//NATURAL BREAKS SCALE
 	//create color scale generator
 	var colorScale = d3.scale.threshold()
