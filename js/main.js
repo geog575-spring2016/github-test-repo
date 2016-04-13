@@ -29,13 +29,6 @@ var yScale = d3.scale.linear()
 //begin script when window loads
 window.onload = setMap();
 
-
-//hellooooo
-//help!
-//we should fix this code
-
-// Here's another comment!
-
 //set up choropleth map
 function setMap(){
 	//map frame dimensions
@@ -331,35 +324,12 @@ function changeAttribute(attribute, csvData){
 	updateChart(bars, csvData.length, colorScale);
 };
 
-//function to position, size, and color bars in chart
-function updateChart(bars, n, colorScale){
-	//position bars
-	bars.attr("x", function(d, i){
-			return i * (chartInnerWidth / n) + leftPadding;
-		})
-		//size/resize bars
-		.attr("height", function(d, i){
-			return 463 - yScale(parseFloat(d[expressed]));
-		})
-		.attr("y", function(d, i){
-			return yScale(parseFloat(d[expressed])) + topBottomPadding;
-		})
-		//color/recolor bars
-		.style("fill", function(d){
-			return choropleth(d, colorScale);
-		});
-
-	//add text to chart title
-	var chartTitle = d3.select(".chartTitle")
-		.text("Number of Variable " + expressed[3] + " in each region");
-};
-
 //function to highlight enumeration units and bars
 function highlight(props){
 	//change stroke
 	var selected = d3.selectAll("." + props.adm1_code)
 		.style({
-			"stroke": "blue",
+			"stroke": "red",
 			"stroke-width": "2"
 		});
 
@@ -370,6 +340,10 @@ function highlight(props){
 function setLabel(props){
 	//label content
 	var labelAttribute = "<h1>" + props[expressed] +
+		"</h1><b>" + expressed + "</b>";
+		var labelAttribute = "<h1>" + props[expressed] +
+		"</h1><b>" + expressed + "</b>";
+		var labelAttribute = "<h1>" + props[expressed] +
 		"</h1><b>" + expressed + "</b>";
 
 	//create info label div
