@@ -34,6 +34,8 @@ window.onload = setMap();
 //help!
 //we should fix this code
 
+// Here's another comment!
+
 //set up choropleth map
 function setMap(){
 	//map frame dimensions
